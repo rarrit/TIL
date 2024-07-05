@@ -6,6 +6,95 @@
   <title>배열의 메서드</title>
 </head>
 <body>
-  
+    <script>
+      // 01. 배열 접근 및 수정
+      // 01-1. 배열 생성 방법
+      let literalArray = ['kimm', 'min', 'kyu'], // 배열 리터럴
+          constructorArray = new Array(1994,1), // 배열 생성자
+          emptyArray = []; // 빈 배열
+
+      // 01-2. 배열 접근 방법
+      console.log('01-2. 배열 접근 방법 :', literalArray[0]); // kim
+
+      // 01-3. 배열 수정 방법
+      literalArray[0] = 'kim';
+      console.log('01-3. 배열 수정 방법 : ', literalArray); // ['kim', 'min', 'kyu']
+      
+      // 01-4. 배열 길이 확인
+      console.log('01-4. 배열 길이 확인 : ', literalArray.length) // 3 
+
+      // *************************** 배열 생성 방법 끝 ***************************
+
+      // 02. 배열 추가
+      // 02-1. [추가] `push()` : 배열 끝에 요소를 추가한다. 
+      let pushMethod = ['today', 'i', 'learned']
+      pushMethod.push("success");
+      console.log('02-1. push 메서드 사용 :', pushMethod); // ['today', 'i', 'learned', 'success']
+
+      // 배열 끝에 요소를 여러개 추가하고 싶을 때는 `apply` 메서드와 `spread`연산자를 사용하면 된다.
+      // 02-1-1. `push` + `apply` 메서드 사용
+      let pushApplyMethod = ['a','b','c']
+      pushApplyMethod.push('d'); // ['a','b','c','d']
+      pushApplyMethod.push.apply(pushApplyMethod, ['e', 'f']);
+      console.log('02-1-1. push + apply 메서드 사용 :', pushApplyMethod); // ['a','b','c','d','e','f']
+
+      // 02-1-2. `push` + `spread` 연산자 사용
+      let spreadOperator = [1,2,3]
+      spreadOperator.push(4); // [1,2,3,4]
+      spreadOperator.push(...[5,6,7]);
+      console.log('02-1-2. push + spread 연산자 사용해서 배열 앞에 다중 요소를 추가 :', spreadOperator); // [1,2,3,4,5,6,7]
+
+      // 02-2. [추가] `unshift` 메서드 사용 : 배열 앞에 요소를 추가한다.
+      let unshiftMethod = ['월','화','수','목','금','토'];
+      unshiftMethod.unshift('일');
+      console.log('02-2. unshift 메서드 사용해서 배옆 앞에 다중 요소를 추가 :', unshiftMethod); // ['일','월','화','수','목','금','토']
+
+      // 02-2-1. `unshift` + `apply` 메서드 사용
+      let unshiftApplyMethod = ['a', 'b', 'c', 'd'];
+      unshiftApplyMethod.unshift('b'); // ['b', 'a', 'b', 'c', 'd']
+      unshiftApplyMethod.unshift.apply(unshiftApplyMethod, ['d', 'c']);
+      console.log('02-2-1. unshift + apply 메서드 사용해서 배열 앞에 다중 요소를 추가 :', unshiftApplyMethod);
+
+      // 02-2-2. `unshift` + `spread` 연산자 사용
+      let unshiftSpreadOperator = [1,2,3];
+      unshiftSpreadOperator.unshift(-1);
+      unshiftSpreadOperator.unshift(...[-3, -2]);
+      console.log('02-2-1. unshift + spread 메서드 사용해서 배열 앞에 다중 요소를 추가 :', unshiftSpreadOperator);
+
+      // *************************** 배열 추가 방법 끝 ***************************      
+
+      // 03 배열 제거
+      // 03-1. `pop()` : 배열 끝에 요소를 제거한다.
+      let popMethod = [1,2,3,4,5]
+      popMethod.pop();
+      console.log('03-1. pop 메서드 사용해서 배열 끝 요소를 제거 :', popMethod); // [1,2,3,4]
+
+      // 배열 끝에 요소를 여러개 제거하고 싶을 때는 `for 문`, `splice`메서드, `slice` 메서드 사용 방법이 있다.
+      // 03-1-1. `for문` 을 사용해서 배열 끝에 다중 요소를 제거한다.
+      let popFor = [1,2,3,4,5],
+          forCount = 3; // 제거할 배열의 갯수
+      
+      for(let i = 0; i < forCount; i ++) {
+        popFor.pop(); // count 갯수 만큼 배열 끝의 요소를 제거함.
+      }
+      console.log('03-1-1. 반복문 + pop() 사용해서 배열 끝 다중 요소를 제거함 :', popFor); // [1,2]
+      
+      // 03-1-2. `splice` 메서드 사용해서 배열 끝에 다중 요소를 제거한다.
+      let popSplice = [1,2,3,4,5],
+          spliceCount = 3; // 제거할 배열의 갯수
+      
+      popSplice.splice(-spliceCount, spliceCount);
+      console.log('03-1-2. splice 사용해서 배열 끝 다중 요소를 제거함 :', popSplice); // [1,2]
+
+      // 03-1-3. `slice` 메서드를 사용해서 배열 끝에 다중 요소를 제거한다.
+      let popSlice = [1,2,3,4,5],
+          sliceCount = 3; // 제거할 배열의 갯수
+
+      popSlice = popSlice.slice(0, popSlice.length - sliceCount);
+      console.log('03-1-3. slice 메서드를 사용해서 배열 끝에 다중 요소를 제거함', popSlice) // [1,2]
+
+      // *************************** 배열 삭제 방법 끝 ***************************
+
+    </script>
 </body>
 </html>
