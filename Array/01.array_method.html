@@ -36,13 +36,13 @@
       let pushApplyMethod = ['a','b','c']
       pushApplyMethod.push('d'); // ['a','b','c','d']
       pushApplyMethod.push.apply(pushApplyMethod, ['e', 'f']);
-      console.log('02-1-1. push + apply 메서드 사용 :', pushApplyMethod); // ['a','b','c','d','e','f']
+      console.log('02-1-1. push + apply 메서드 사용해서 배열 뒤에 다중 요소를 추가  :', pushApplyMethod); // ['a','b','c','d','e','f']
 
       // 02-1-2. `push` + `spread` 연산자 사용
       let spreadOperator = [1,2,3]
       spreadOperator.push(4); // [1,2,3,4]
       spreadOperator.push(...[5,6,7]);
-      console.log('02-1-2. push + spread 연산자 사용해서 배열 앞에 다중 요소를 추가 :', spreadOperator); // [1,2,3,4,5,6,7]
+      console.log('02-1-2. push + spread 연산자 사용해서 배열 뒤에 다중 요소를 추가 :', spreadOperator); // [1,2,3,4,5,6,7]
 
       // 02-2. [추가] `unshift` 메서드 사용 : 배열 앞에 요소를 추가한다.
       let unshiftMethod = ['월','화','수','목','금','토'];
