@@ -65,7 +65,7 @@
 
       // 03 배열 제거
       // 03-1. `pop()` : 배열 끝에 요소를 제거한다.
-      let popMethod = [1,2,3,4,5]
+      let popMethod = [1,2,3,4,5];
       popMethod.pop();
       console.log('03-1. pop 메서드 사용해서 배열 끝 요소를 제거 :', popMethod); // [1,2,3,4]
 
@@ -91,7 +91,27 @@
           sliceCount = 3; // 제거할 배열의 갯수
 
       popSlice = popSlice.slice(0, popSlice.length - sliceCount);
-      console.log('03-1-3. slice 메서드를 사용해서 배열 끝에 다중 요소를 제거함', popSlice) // [1,2]
+      console.log('03-1-3. slice 메서드를 사용해서 배열 끝에 다중 요소를 제거함 :', popSlice) // [1,2]
+
+      // 03-2. `shift()` : 배열 앞쪽 요소를 제거한다.
+      let shiftMethod = [1,2,3,4,5];
+      shiftMethod.shift();
+      console.log('03-2. shift 메서드를 사용해서 배열 앞쪽 요소를 제거함 :', shiftMethod); // [2,3,4,5]
+      
+      // 03-2-1. `for문` 을 사용해서 배열 앞쪽 다중 요소를 제거한다.
+      let shiftFor = [1,2,3,4,5],
+          shiftForCount = 3; // 제거할 배열의 갯수
+
+      for(let i = 0; i < shiftForCount; i ++) shiftFor.shift(); // count 갯수 만큼 배열 앞쪽 요소를 제거함.
+      console.log('03-2-1. 반복문 + shift() 사용해서 배열 앞쪽 다중 요소를 제거함 :', shiftFor); // [4,5]
+
+      // 03-2-2. `slice()`메서드를 사용해서 배열 앞쪽 다중 요소를 제거한다.
+      let swiftSlice = [1,2,3,4,5],
+          swiftSliceCount = 3; // 제거할 배열의 갯수
+
+      swiftSlice = swiftSlice.slice(swiftSliceCount);  // 배열 끝에서 count 개수만큼 요소 제거
+      console.log('03-2-3. slice 메서드를 사용해서 배열 앞쪽 다중 요소를 제거함 :', swiftSlice) // [4,5]
+
 
       // *************************** 배열 삭제 방법 끝 ***************************
 
