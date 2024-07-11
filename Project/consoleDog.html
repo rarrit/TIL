@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>console 적극 활용하기</title>
+  <style>
+    img {width: 100%;}
+  </style>
+</head>
+<body>
+  <h1>특수 문자를 활용한 강아지 출력하기!</h1>
+
+  <h2>문제 설명</h2>
+  <img src="https://teamsparta.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F83c75a39-3aba-4ba4-a792-7aefe4b07895%2Fb2bb233f-9559-4ef2-9960-7e92d79a305f%2F%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-05-20_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_5.43.09.png?table=block&id=ad0c59a7-6aff-4d11-929b-1e54af9d7ffb&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=770&userId=&cache=v2" alt="">
+  <ol>
+    <li>`console.log`로 특수 문자를 출력하여 강아지를 그린다.</li>
+    <li>그림에 대한 설명도 출력한다.</li>
+    <li>그림에 대한 경고 메시지도 추가한다.</li>
+    <li>오류 메시지도 출력한다.</li>
+    <li>마지막으로, 강아지를 그리는 데 걸린 시간을 출력한다.</li>
+  </ol>
+  <h3>결과물</h3>
+  <img src="https://teamsparta.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F83c75a39-3aba-4ba4-a792-7aefe4b07895%2Fcd0500e0-6a26-49fc-bf9c-a29f0c93770f%2F%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-05-20_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_5.55.30.png?table=block&id=5e9567c6-06a7-4c15-8020-ff0b88211ff7&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1420&userId=&cache=v2" alt="">
+
+  <h3>작업내용</h3>
+  <p>
+    크롬기준<br/>
+    Window: `컨트롤 + 쉬프트 + i` or `F12`<br/>
+    Mac: `cmd + opt + i`
+  </p>
+  <script>
+    console.time("그리는데 걸린 시간");
+    console.log(`
+                /\____
+              (    ₩ \_____
+              /            O
+              /    (______/
+              /______/  U
+                `)
+    console.log("이것은 단순한 SCII 아트 강아지입니다.")
+    console.warn("주의: 이 강아지는 그림입니다. 실제 강아지가 아닙니다!");
+    console.error("오류: 실제 강아지 데이터를 불러오지 못했습니다!")
+    console.timeEnd("그리는데 걸린 시간")
+  </script>
+</body>
+</html>
