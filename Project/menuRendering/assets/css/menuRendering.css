@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+* {
+  font-family: "Gugi", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+body {
+  background: #1c1c1e
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px
+}
+.sortBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.sortBox button {
+  padding: 0 10px;
+}
+.menuBox {  
+  text-align: center;
+  padding: 0 30px 40px;
+  border-radius: 20px;
+  background:#202022;
+  box-shadow: .5px .5px 10px rgba(255,255,255,.3);
+  overflow: hidden
+}
+.menuBox h1 {
+  font-size:24px;
+  color: #fff;
+  background: #c06d67;
+  margin: 0 -30px 15px;  
+  padding: 20px 0
+}
+#menuList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  max-width: 600px;
+  margin: 30px 0 0 0;
+}
+#menuList li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 0 auto;
+  border-radius: 5px;
+  padding: 15px;
+  background: #bbbbbb;
+}
+#menuList li strong {
+  font-size: 16px;
+}
+#menuList li p {
+  font-size: 12px;
+  color: #202022;
+  margin: 10px 0;
+  word-break: keep-all;
+}
+#menuList li span {
+  font-size: 11px;
+}
