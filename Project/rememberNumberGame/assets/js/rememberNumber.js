@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const countNum = document.getElementById("countNum"); // 카운트 영역
 
   let rememberNumber = 0; // 기억할 숫자 초기값
-  let delayCount = 4; // 카운트 다운 초 (0~4: 5초)
+  let delayCount = 5; // 카운트 다운 초 
   let intervalTimer; // setInterval 초기화
 
   /******************************************************************************
@@ -118,9 +118,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// 1. 시작 버튼 클릭시 handleGameStart 함수 실행
-// 1-1. 1000 ~ 9999의 랜덤으로 소수점 제거하여 변수 randomNumber에 담아줌
-// 1-1. 기억할 숫자, 카운트 노출
-// 1-2. 5~0초 까지 카운트 -1씩 적용 (setTimeout, setInterval)
-// 1-3. 0초에서 기억할 숫자 박스 삭제
-// 1-4. (javascript input value 변경 감지)
