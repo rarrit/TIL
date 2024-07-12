@@ -1,12 +1,3 @@
-
-/* 
- * 01. 첫 로딩 시 모든 데이터 ul > li로 노출
- * 02. 기존 데이터에 category 추가 (고기가 들어감, 고기가 안들어감)
- *     - 고기좋아 meat : true
- *     - 고기싫어 meat : false
- * 03. 각 버튼 클릭시 해당 카테고리에 맞게 데이터 노출
-*/
-
 document.addEventListener("DOMContentLoaded", () => {
   const menuList = document.getElementById('menuList'); // 메뉴 리스트
   const btnAll = document.getElementById('btnAll'); // 전체 버튼
@@ -53,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     category === 'all'
       // 카테고리가 전체면 전체 데이터 노출
       ? renderMenus(menuItemsData)
-      // 전체가 아니라면 전체 데이터의 categories의 카테고리명에 따라 노출
+      // 전체가 아니라면 전체 데이터 categories의 카테고리명에 따라 노출
       : renderMenus(menuItemsData.filter(items => items.categories[category]));
   }
 
