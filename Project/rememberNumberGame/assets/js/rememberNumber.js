@@ -92,6 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // 오답
       msgBox.innerHTML = falseText;
     }
+
+    inputArea.disabled = true; // 인풋 비활성화
   }
 
   /******************************************************************************
@@ -100,6 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
   **/
   const handleResetGame = () => {
     inputArea.disabled = true; // 인풋 비활성화
+    inputArea.value = ''; // 작성 초기화
     msgBox.style.display = "none"; // 메시지 박스 제거
     rememberNumBox.style.display = "none"; // 기억 박스 제거    
     delayCount = 5; // 카운트 초기화
