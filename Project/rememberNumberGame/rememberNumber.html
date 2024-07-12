@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>숫자 기억 게임</title>
+  <link rel="stylesheet" href="./assets/css/rememberNumber.css">
+  <script src="./assets/js/rememberNumber.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="gameBox">
+      <h1>숫자 기억 게임</h1>
+      
+      <!-- handleGameStart 함수 실행 시 노출 -->
+      <div id="rememberNumBox" style="display: none">
+        <span id="numberVal">4075</span>
+        <p><em id="countNum">5</em>초 남았어요!</p>
+      </div>
+
+      <div id="msgBox" style="display: none;"></div>
+
+      <div class="inputBox">
+        <input type="text" id="inputArea" placeholder="숫자를 입력하세요." disabled>        
+      </div>
+      <div class="btnBox">
+        <button type="button" id="btnStart">시작</button>
+        <button type="button" id="btnAnswer">제출</button>
+      </div>
+    </div>
+  </div>  
+</body>
+</html>

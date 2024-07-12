@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+* {
+  font-family: "Gugi", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+body {
+  background: #1c1c1e
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center 
+}
+.gameBox {
+  text-align: center;
+  padding: 0 30px 40px;
+  border-radius: 20px;
+  background:#202022;
+  box-shadow: .5px .5px 10px rgba(255,255,255,.3);
+  overflow: hidden;
+}
+.gameBox h1 {
+  font-size:24px;
+  color: #fff;
+  background: #c06d67;
+  margin: 0 -30px 15px;  
+  padding: 20px 0;
+}
+.inputBox input {
+  width: 100%;
+  height: 30px;
+  background: #e1e1e1;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 0 0 0 10px
+}
+.inputBox input:disabled {
+  background:#2e2e2e;
+}
+.btnBox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  margin: 10px 0 0 0
+}
+.btnBox button {
+  flex: 1;
+  height: 30px;
+  background:#67c099;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer
+}
+.btnBox button + button {
+  background: #678bc0
+}
+#rememberNumBox {
+  margin: 0 0 15px;
+  color: #e1e1e1
+}
+#rememberNumBox span {
+  display: block;
+  font-size: 30px;
+  color: #fff;
+  margin: 0 0 5px
+}
+#rememberNumBox p {
+  font-size: 12px
+}
+#rememberNumBox p em {
+  font-size: 14px;
+  color: red;
+  margin: 0 5px 0
+}
+#msgBox {
+  margin: 0 0 15px
+}
+#msgBox p {
+  font-size: 14px;
+}
+#msgBox span {
+  font-size: 13px;
+  color: #fff;
+  margin: 5px 0 0 0;
+}
+#msgBox span em {
+  font-size: 20px;
+  font-weight: bold;
+  color: #b4e002;
+  margin:0 5px 0 0;
+}
+#msgBox .textGreen {
+  color: #005a99;
+}
+#msgBox .textRed {
+  color: #990047;
+}
