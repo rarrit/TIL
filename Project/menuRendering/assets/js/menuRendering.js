@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuList = document.getElementById('menuList'); // 메뉴 리스트
   const btnAll = document.getElementById('btnAll'); // 전체 버튼
   const btnMeatOn = document.getElementById('btnMeatOn'); // 고기좋아 버튼
-  const btnMeatOff = document.getElementById('btnMeatOff'); // 고기싫어 버튼
   const btnRice = document.getElementById('btnRice'); // 밥좋아 버튼
   const btnNoodle = document.getElementById('btnNoodle'); // 면좋아 버튼
   const menuItems = [
@@ -24,12 +23,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 카테고리를 추가한 배열을 생성함
   const menuItemsData = menuItems.map(menuItem => ({
-    ...menuItem, // 이전 객체 복사
-    // 고기인지 아닌지 카테고리 추가 이후 카테고리 추가할 경우 아래에 계속 추가
-    categoryMeat: menuItem.description.includes("고기") ? true : false,
-    categorySoup: menuItem.description.includes("찌개") ? true : false,
-    categoryRice: menuItem.description.includes("밥") ? true : false,
-    categoryNoodle: menuItem.description.includes("면") ? true : false
+    ...menuItem, // 이전 객체 복사    
+    categories: {
+      // 카테고리 추가시 아래에 추가
+      meat: menuItem.description.includes("고기"),
+      soup: menuItem.description.includes("찌개"),
+      rice: menuItem.description.includes("밥"),
+      noodle: menuItem.description.includes("면")
+    }
   }))
   console.log(menuItemsData);
 
@@ -44,20 +45,26 @@ document.addEventListener("DOMContentLoaded", () => {
     menuList.innerHTML = menuHtml;
   };
 
-
   // 로딩시 전체 노출
   renderMenus(menuItemsData);
 
+  // 카테고리 필터링
+  const menuCategoryFilter = category => {
+    category === 'all'
+      // 카테고리가 전체면 전체 데이터 노출
+      ? renderMenus(menuItemsData)
+      // 전체가 아니라면 전체 데이터의 categories의 카테고리명에 따라 노출
+      : renderMenus(menuItemsData.filter(items => items.categories[category]));
+  }
+
   // 전체보기 버튼 클릭
-  btnAll.addEventListener('click', () => { renderMenus(menuItemsData) })
+  btnAll.addEventListener('click', () => menuCategoryFilter('all'));
   // 고기좋아 버튼 클릭
-  btnMeatOn.addEventListener('click', () => { renderMenus(menuItemsData.filter(menuItem => menuItem.categoryMeat === true)) })
-  // 고기싫어 버튼 클릭
-  btnMeatOff.addEventListener('click', () => { renderMenus(menuItemsData.filter(menuItem => menuItem.categoryMeat === false)) })
+  btnMeatOn.addEventListener('click', () => menuCategoryFilter('meat'));
   // 밥좋아 버튼 클릭
-  btnRice.addEventListener('click', () => { renderMenus(menuItemsData.filter(menuItem => menuItem.categoryRice === true)) })
+  btnRice.addEventListener('click', () => menuCategoryFilter('rice'));
   // 면좋아 버튼 클릭
-  btnNoodle.addEventListener('click', () => { renderMenus(menuItemsData.filter(menuItem => menuItem.categoryNoodle === true)) })
+  btnNoodle.addEventListener('click', () => menuCategoryFilter('noodle'));
 
 });
 
