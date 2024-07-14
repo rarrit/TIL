@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+* {
+  font-family: "Gugi", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+body {
+  background: #1c1c1e
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px
+}
+.todoBox {  
+  text-align: center;
+  padding: 0 30px 40px;
+  border-radius: 20px;
+  background:#202022;
+  box-shadow: .5px .5px 10px rgba(255,255,255,.3);
+  overflow: hidden
+}
+.todoBox h1 {
+  font-size:24px;
+  color: #fff;
+  background: #c06d67;
+  margin: 0 -30px 15px;  
+  padding: 20px 0
+}
+#todoList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 600px;  
+  border-radius: 5px;
+  box-shadow: .5px .5px 10px rgba(255,255,255,.15);
+  margin: 10px 0 0 0;
+  padding: 5px 10px;
+}
+#todoList li {
+  list-style: none;
+  text-align: left;
+  padding: 5px 0;
+  color: #fff;
+}
+#todoList li:not(:last-child) {
+  border-bottom: 1px solid #e1e1e1;
+}
+#todoList li input:checked + label {
+  font-style: italic;
+  color: #979595;
+  text-decoration: line-through;
+}
+.inputBox {
+  display: flex;
+  align-items: center;
+  gap: 5px
+}
+.inputBox input {
+  width: calc(100% - 55px);
+  height: 30px;
+  background: #e1e1e1;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 0 0 0 10px
+}
+.inputBox button {
+  width: 50px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  background: #67c099
+}
+.inputBox input:disabled {
+  background:#2e2e2e
+}
+.btnBox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  margin: 10px 0 0 0
+}
+.btnBox button {
+  flex: 1;
+  height: 30px;
+  background:#c06767;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer
+}
