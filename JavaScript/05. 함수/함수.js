@@ -20,7 +20,7 @@ const funcName02 = function (x,y) {
 }
 funcName02(1,2); // 3
 
-// 3. 화살표 함수
+// 3. 화살표 함수 (ES6 신 문법)
 // 함수 호이스팅이 불가능하다.
 // 단일 표현식일 때 return 이 생력 가능하다.
 const funcName03 = (x,y) => x + y;
