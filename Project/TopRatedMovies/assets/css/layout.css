@@ -1,0 +1,9 @@
+
+body {width:100vw; height:100vh; background: #010101; overflow-x:hidden; overflow-y:scroll;}
+
+header {position:fixed; top:0; left:0; z-index:9999; width:100%; background:#010101; box-shadow:0.5px 0.5px 30px rgba(0,0,0,0.3); padding:15px 0;}
+header .inner {display:flex; align-items:center; justify-content:space-between; width:100%; max-width:1660px; margin:0 auto; padding:0 30px}
+header .inner h1 {color:#fff}
+header .searchArea {display:flex; align-items:center; width:355px; border-radius:10px; background:#252525; overflow:hidden;}
+header .searchArea input {width:calc(100% - 60px); height:40px; font-size:15px; color:#fff; background:transparent; border:0px; padding:0 10px}
+header .searchArea button {display:flex; align-items:center; justify-content:center; width:60px; height:40px; background:#cf1918; border:0px; color:#fff;}
