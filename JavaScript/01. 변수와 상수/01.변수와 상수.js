@@ -21,21 +21,21 @@ myVar = "GoodBye 01"; // 재할당 가능
 console.log(myVar); // Hello World 01
 
 /*
-** 02. let
+** 02. let (ES6)
 ** 함수 재선언 불가
 ** 함수 재할당 가능
 */ 
 let myLet = "Hello World 02";
 // let myLet = "test 2"; 재선언 불가능
 myLet = "GoodBye 02"; // 재할당 가능
-console.log(myLet); // Hello World 02
+console.log("myLet =>", myLet); // Hello World 02
 
 /*
-** 03. const
+** 03. const (ES6)
 ** 함수 재선언 불가
 ** 함수 재할당 불가
 */ 
 const myConst = "Hello Wrold 03";
 // const myConst = "test 3"; 재선언 불가능
 // myConst = "GoodBye 03" 재할당 불가능
-console.log(myConst); // Hello World 03
+console.log("myConst =>", myConst); // Hello World 03
