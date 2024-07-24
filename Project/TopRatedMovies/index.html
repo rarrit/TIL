@@ -3,8 +3,9 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>최고 평점 영화 컬랙션</title>
+        <title>스파르타 2주차 개인과제 | 김민규</title>        
         <script src="./assets/js/api.js"></script>
+        <script src="./assets/js/slide.js"></script>
         <link rel="stylesheet" href="./assets/css/style.css" />
     </head>
     <body>
@@ -17,7 +18,7 @@
                     <!-- header -->
                     <header id="header">
                         <div class="inner">
-                            <h1>MINKYU MOVIE CORRECTION</h1>
+                            <h1>MINKYU MOVIE COLLECTION</h1>
                             <div class="searchArea">
                                 <input type="text" id="searchInp" placeholder="영화 제목을 검색해 보세요." />
                                 <button type="button" id="searchBtn">검색</button>
@@ -34,6 +35,11 @@
                                     <!-- 영화 슬라이드 노출될 영역 -->
                                 </ul>
                             </div>
+                        </div>
+                        <div id="movieBullet"></div>
+                        <div id="btnArea">
+                            <button type="button" id="btnPrev"></button>
+                            <button type="button" id="btnNext"></button>
                         </div>
                     </section>
                     <!--// mainBanner -->

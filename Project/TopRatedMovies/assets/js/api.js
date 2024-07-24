@@ -43,7 +43,9 @@ function fetchMovies(searchVal) {
       // 검색 값이 있는지 없는지 판별하여 리스트를 출력함
       if (searchVal === '' || searchVal === null || searchVal === undefined) {
         handleMovieRender(movies); // 첫 로딩 시 전체 데이터 노출
-        handleListMouseEvent(); // 무비 리스트 책갈피 효과 이벤트        
+        handleListMouseEvent(); // 무비 리스트 책갈피 효과 이벤트                
+        slideReset();
+        handleSlideStart(movies);
       } else {
         // [filter - 실행순서]
         // 1. movie.title.toLowerCase() : 대소문자를 구분하지 않고 검색어를 비교하기위해 타이틀을 소문자로 변경해줌
@@ -55,8 +57,13 @@ function fetchMovies(searchVal) {
         if (filterMovies.length > 0) { // 검색어가 포함된 movie 데이터가 있는지 확인
           handleMovieRender(filterMovies); // 해당 데이터 값으로 동적으로 화면에 출력
           handleListMouseEvent(); // 무비 리스트 책갈피 효과 이벤트 
-          if (filterMovies.length === 1) { // 영화가 한 개일 때
+
+          if (filterMovies.length < 2) { // 영화가 한 개일 때
+            slideReset();
             document.getElementById('movieList').appendChild.remove;
+          } else {
+            slideReset();
+            handleSlideStart(filterMovies);
           }
         } else {
           alert('검색한 영화가 없습니다.');
@@ -64,7 +71,7 @@ function fetchMovies(searchVal) {
         }
       }
     })
-    .catch(err => console.error(err));
+  // .catch(err => console.error(err));
 }
 
 
@@ -182,6 +189,9 @@ function handleListMouseEvent() {
       movieListItem.forEach(all => all.classList.remove('curr'));
       item.classList.add('curr');
     })
+    item.addEventListener("mouseout", () => {
+      movieListItem.forEach(all => all.classList.remove('curr'));
+    })
   })
 }
 
@@ -196,4 +206,5 @@ function getStarRating(vote_average) {
   else stars = '★★★★★';
   return stars;
 }
+
 
