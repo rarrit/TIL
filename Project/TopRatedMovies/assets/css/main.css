@@ -26,9 +26,9 @@
 #movieList {position:relative; display:flex;}
 #movieList li {position:relative; height:70vh; min-height:600px; overflow:hidden; font-size:0; -webkit-transition: all .75s cubic-bezier(0,.72,.44,.99); -moz-transition: all .75s cubic-bezier(0, .72, .44, .99); -ms-transition: all .75s cubic-bezier(0, .72, .44, .99); -o-transition: all .75s cubic-bezier(0, .72, .44, .99); transition: all .75s cubic-bezier(0,.72,.44,.99);}
 #movieList li:before {content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.65)}
-#movieList li.curr {width:40% !important;}
-#movieList .tBox {position:absolute; top:0; left:0; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; height:100%; text-align:center; padding:30px 40px; transform:translateY(100%); opacity:0;}
-#movieList li.curr .tBox {opacity: 1; transform:translateY(-20px); -webkit-transition: all .35s cubic-bezier(0,.72,.44,.99) .35s; -moz-transition: all .75s cubic-bezier(0, .72, .44, .99) .35s; -ms-transition: all .75s cubic-bezier(0, .72, .44, .99) .35s; -o-transition: all .75s cubic-bezier(0, .72, .44, .99) .35s; transition: all .75s cubic-bezier(0,.72,.44,.99) .35s;}
+#movieList li.curr {width:85% !important;}
+#movieList .tBox {position:absolute; top:0; left:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; max-width:600px; height:100%; text-align:center; padding:30px 40px; transform:translate(-50%, 100%); opacity:0;}
+#movieList li.curr .tBox {opacity: 1; transform:translate(-50%, -20px); transition: all .35s cubic-bezier(0,.72,.44,.99) .4s;}
 #movieList .tBox em {display:block; font-size:16px; font-weight:500; color:#fff;}
 #movieList .tBox em span {color:#929292;}
 #movieList .tBox strong {display:block; font-size:28px; color:#cf1818; line-height:1; margin:10px 0 0}
@@ -40,8 +40,9 @@
 #movieList .tBox .average {color: rgb(199, 131, 75) }
 #movieList .tBox .star {color:rgb(199, 199, 75)}
 
-#movieSlideList button, #movieList button {width:100%; max-width:180px; height:30px; color:#d4d4d4; background:#252525; border:0px; border-radius:5px; margin:15px 0 0 0;}
+#movieSlideList button, #movieList button {width:100%; max-width:180px; height:30px; color:#d4d4d4; background:#252525; border:0px; border-radius:5px; cursor:pointer; margin:15px 0 0 0; transition:all .35s ease;}
 #movieList button {color:#252525; background:#d4d4d4;}
+#movieSlideList button:hover, #movieList button:hover {color:#fff; background:#cf1818;}
 
 @media (max-width: 1300px) {
   #mainBanner {height:600px}
@@ -49,7 +50,6 @@
   #movieSlideList .tBox strong {font-size:40px;}
   #movieSlideList .tBox .info {font-size:15px; margin:20px 0; }
   #movieSlideList .tBox .desc {font-size:16px;}
-
   #movieList .tBox em {font-size:14px;}
   #movieList .tBox strong {font-size:24px;}
   #movieList .tBox .info {font-size:15px; margin:15px 0; }
