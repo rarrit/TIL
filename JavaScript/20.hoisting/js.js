@@ -85,3 +85,4 @@ function a() {
   console.log(b); // 'bbb'
 }
 a();
+//

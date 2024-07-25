@@ -33,3 +33,4 @@ console.log(a); // 3등으로 찍힘
 
 // 코드실행 → 전역(in) → 전역(중단) + outer(in) → outer(중단) + inner(in) → inner(out) + outer(재개) → 
 // outer(out) + 전역(재개) → 전역(out) → 코드종료
+// 

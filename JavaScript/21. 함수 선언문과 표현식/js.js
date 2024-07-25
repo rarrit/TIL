@@ -14,16 +14,19 @@ var c = function d() { /* ... */ }
 c(); // 실행 ok
 d(); // 에러!
 
-
-
 /*
-- 실행 컨텍스트는 실행할 코드에 제공할 환경 정보들을 모아놓은 객체이다.
+- 실행 컨텍스트는 실행할 코드에 제공할 환경 정보들을 모아놓은 객체이다. (객체: 실행할 코드의 환경 정보)
 - 그 객체 안에는 3가지가 존재한다.
-  ✓ VariableEnvironment
-  ✓ LexicalEnvironment
-  ✓ ThisBindings
+  ✓ VariableEnvironment (VE)
+  ✓ LexicalEnvironment (LE)
+  ✓ ThisBindings (나중에 설명!)
 - VE와 LE는 실행컨텍스트 생성 시점에 내용이 완전히 같고, 이후 스냅샷 유지 여부가 다르다.
 - LE는 다음 2가지 정보를 가지고 있다.
-  ✓ record(=environmentRecord) ← 이 record의 수집과정이 hoisting
+  ✓ record(=environmentRecord) ← [중요!] 이 record의 수집과정이 hoisting
   ✓ outer(=outerEnvironmentReference)
 */
+
+
+// 함수 선언문은 전체를 호이스팅함
+// 함수 표현식은 호이스팅이 불가능함 
+//
