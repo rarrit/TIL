@@ -7,13 +7,25 @@ let downClientX; // [drag] 마우스 클릭했을 때 포인터 위치
 let upClientX; // [drag] 마우스 땟을 때 포인터 위치      
 let isSlide;
 
+// 초기화에서 사용할 수 있게 함수도 초기화해준다.
+let carouselPrevMove;
+let carouselNextMove;
+let carouselMouseDown;
+let carouselMouseUp;
+
+
 function handleSlideStart(movies) {
-  if (!movies || movies.length < 2) return false;
+
+  if (!movies || movies.length < 2) {
+    console.log("응 2개 미만")
+  } else {
+    console.log("응 3개 이상")
+  }
 
   const carouselSlide = document.getElementById("movieSlideList");
   const carouselSlideItems = document.querySelectorAll("#movieSlideList > li");
   const carouselBullet = document.getElementById("movieBullet");
-  const carouselBulletItems = document.querySelectorAll("#movieBullet > li");
+  const carouselBulletItems = document.querySelectorAll("#movieBullet > span");
   const carouselBtnPrev = document.getElementById("btnPrev");
   const carouselBtnNext = document.getElementById("btnNext");
 
@@ -46,7 +58,7 @@ function handleSlideStart(movies) {
 
   // #04. 슬라이드 썸네일 엑티브 또한 슬라이드의 인덱스에 맞춰 엑티브가 되어야하기 때문에 함수로 생성함
   function updateThumbActive() {
-    carouselBulletItems.forEach((thumb, idx) => thumb.classList.toggle("curr", idx === slideCurrentIdx));
+    document.querySelectorAll("#movieBullet > span").forEach((thumb, idx) => thumb.classList.toggle("curr", idx === slideCurrentIdx));
   }
 
   // #05. 슬라이드의 롤링되는 기능을 멈추는것 또한 자주 사용되어 함수로 생성함
@@ -54,7 +66,8 @@ function handleSlideStart(movies) {
     clearInterval(slideMoveTimer);
   }
 
-  function carouselPrevMove() {
+  // #06. 슬라이드 왼쪽으로 이동 함수
+  carouselPrevMove = function () {
     stopSlideMove(); // 자동 슬라이드 종료
     slideCurrentIdx = (slideCurrentIdx === 0) ? carouselSlideItems.length - 1 : slideCurrentIdx - 1;
     updateSlideTransform(); // 슬라이드 인덱스에 맞춰 이동
@@ -62,7 +75,8 @@ function handleSlideStart(movies) {
     startSlideMove(); // 자동 슬라이드 시작
   }
 
-  function carouselNextMove() {
+  // #06. 슬라이드 오른쪽으로 이동 함수
+  carouselNextMove = function () {
     stopSlideMove();
     slideCurrentIdx = (slideCurrentIdx === carouselSlideItems.length - 1) ? 0 : slideCurrentIdx + 1;
     updateSlideTransform();
@@ -70,6 +84,21 @@ function handleSlideStart(movies) {
     startSlideMove();
   }
 
+  // #07. 슬라이드 마우스 클릭했을 때 함수
+  carouselMouseDown = function (e) {
+    isDragChk = true;
+    downClientX = e.clientX;
+  }
+
+  // #08. 슬라이드 마우스 클릭하고 놓았을 때 함수
+  carouselMouseUp = function (e) {
+    isDragChk = false;
+    upClientX = e.clientX;
+    downClientX > upClientX ? carouselNextMove() : carouselPrevMove();
+    updateThumbActive();
+  }
+
+  // #07. 슬라이드 썸네일 클릭 함수
   function handleThumbnailClick(idx) {
     return function () {
       stopSlideMove();
@@ -80,50 +109,43 @@ function handleSlideStart(movies) {
     };
   }
 
-  carouselSlide.addEventListener("mousedown", (e) => {
-    isDragChk = true;
-    downClientX = e.clientX;
-  });
-
-  carouselSlide.addEventListener("mouseup", (e) => {
-    isDragChk = false;
-    upClientX = e.clientX;
-    downClientX > upClientX ? carouselNextMove() : carouselPrevMove();
-    updateThumbActive();
-  });
-
-  carouselSlide.addEventListener("mousemove", (e) => {
-    if (isDragChk) {
-      // Dragging logic can be added here
-    }
-  });
-
-  carouselSlide.addEventListener("mouseover", stopSlideMove);
-  carouselSlide.addEventListener("mouseleave", startSlideMove);
-
   carouselBulletItems.forEach((item, idx) => {
     item.addEventListener("click", handleThumbnailClick(idx));
   });
-
-  carouselBtnPrev.addEventListener("click", carouselPrevMove);
-  carouselBtnNext.addEventListener("click", carouselNextMove);
 
   createSlides(movies);
   startSlideMove();
 
 
+  carouselBtnPrev.addEventListener("click", carouselPrevMove);
+  carouselBtnNext.addEventListener("click", carouselNextMove);
+  carouselSlide.addEventListener("mousedown", carouselMouseDown);
+  carouselSlide.addEventListener("mouseup", carouselMouseUp);
+
+
 }
+
+
 
 // 슬라이드 초기화
 function slideReset() {
   console.log('초기화');
+
   isSlide = false;
   slideCurrentIdx = 0;
   clearInterval(slideMoveTimer);
-  document.getElementById("movieBullet").appendChild.remove;
-  document.getElementById("movieSlideList").style.transform = `translate3d(0px, 0px, 0px)`;
 
-  console.log('slideCurrentIdx =>', slideCurrentIdx);
-  console.log('carouselBullet =>', document.getElementById("movieBullet"));
-  console.log('carouselSlide =>', document.getElementById("movieSlideList").style.transform);
-};
+  const carouselSlide = document.getElementById("movieSlideList");
+  const carouselBtnPrev = document.getElementById("btnPrev");
+  const carouselBtnNext = document.getElementById("btnNext");
+
+  document.getElementById("movieBullet").innerHTML = '';
+  carouselSlide.style.transform = `translate3d(0px, 0px, 0px)`;
+
+  if (carouselBtnPrev) carouselBtnPrev.removeEventListener("click", carouselPrevMove);
+  if (carouselBtnNext) carouselBtnNext.removeEventListener("click", carouselNextMove);
+  if (carouselSlide) {
+    carouselSlide.removeEventListener("mousedown", carouselMouseDown);
+    carouselSlide.removeEventListener("mouseup", carouselMouseUp);
+  }
+}

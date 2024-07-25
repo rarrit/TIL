@@ -42,9 +42,10 @@ function fetchMovies(searchVal) {
 
       // 검색 값이 있는지 없는지 판별하여 리스트를 출력함
       if (searchVal === '' || searchVal === null || searchVal === undefined) {
-        handleMovieRender(movies); // 첫 로딩 시 전체 데이터 노출
-        handleListMouseEvent(); // 무비 리스트 책갈피 효과 이벤트                
         slideReset();
+        document.getElementById('btnArea').style.display = 'block';
+        handleMovieRender(movies); // 첫 로딩 시 전체 데이터 노출
+        handleListMouseEvent(); // 무비 리스트 책갈피 효과 이벤트                        
         handleSlideStart(movies);
       } else {
         // [filter - 실행순서]
@@ -56,11 +57,14 @@ function fetchMovies(searchVal) {
         const filterMovies = movies.filter(movie => movie.title.toLowerCase().includes(searchVal.toLowerCase()));
         if (filterMovies.length > 0) { // 검색어가 포함된 movie 데이터가 있는지 확인
           handleMovieRender(filterMovies); // 해당 데이터 값으로 동적으로 화면에 출력
+          document.getElementById('btnArea').style.display = 'block';
           handleListMouseEvent(); // 무비 리스트 책갈피 효과 이벤트 
 
-          if (filterMovies.length < 2) { // 영화가 한 개일 때
+          if (filterMovies.length === 1) { // 영화가 한 개일 때
             slideReset();
-            document.getElementById('movieList').appendChild.remove;
+            document.getElementById('movieList').innerHTML = '';
+            document.getElementById('movieBullet').innerHTML = '';
+            document.getElementById('btnArea').style.display = 'none';
           } else {
             slideReset();
             handleSlideStart(filterMovies);
