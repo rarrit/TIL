@@ -23,16 +23,16 @@ console.log("d", d); // undefined
 // 2. 객체인 경우
 // key가 중요함
 let user = {
-  name : 'abc',
-  age  : 30,
+  name: 'abc',
+  age: 30,
 }
-let {name, age} = user;
+let { name, age } = user;
 console.log(name); // string: 'abc'
 console.log(user); // number:  30
 
 
 // 새로운 이름으로 할당하는 방법
-let {name: newName, age: newAge } = user;
+let { name: newName, age: newAge } = user;
 console.log(newName); // 'abc'
 console.log(newAge); // 30
 /*
@@ -44,3 +44,5 @@ let {
   age  : 30,
 }
 */
+
+//
