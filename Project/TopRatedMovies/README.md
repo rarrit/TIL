@@ -83,8 +83,6 @@
  ┗ 📜index.html
 
 ### :pushpin: 4-2) 사용언어
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=rarrit)](https://github.com/anuraghazra/github-readme-stats)
-
 ![js](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![html5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![css3](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
 
 ## :five: 소감
@@ -92,3 +90,4 @@
 ### 제작 풀이 과정
 - [JavaScript 영화 검색 사이트 제작 및 풀이 과정 1차](https://rarrit.github.io/til/js/movie-correction/)
 - [JavaScript 영화 검색 사이트 제작 및 풀이 과정 2차](https://rarrit.github.io/til/js/movie-correction02/)
+- [JavaScript 영화 검색 사이트 제작 및 풀이 과정 3차](https://rarrit.github.io/til/js/movie-correction03/)
