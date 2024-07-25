@@ -1,5 +1,3 @@
-<img src="https://capsule-render.vercel.app/api?type=모양&color=색상코드&height=높이&section=header&text=텍스트&fontSize=텍스트크기" />
-
 # :ledger: 스파르타코딩 2주차 개인과제 | 최고 평점 영화 콜렉션
 
 ![MINKYU MOVIE COLLECTION 01](https://github.com/user-attachments/assets/10654426-d1ae-464b-b8a6-9f637a539d37)
@@ -67,18 +65,22 @@
 ## :four: 폴더구조 및 사용언어
 
 ### :pushpin: 4-1) 폴더구조
-- 📦TopRatedMovies<br/>
+📦TopRatedMovies<br/>
  ┣ 📂assets<br/>
  ┃ ┣ 📂css<br/>
- ┃ ┃ ┗ 📜common.css<br/>
- ┃ ┃ ┗ 📜layout.css<br/>
- ┃ ┃ ┗ 📜main.css<br/>
- ┃ ┃ ┗ 📜slide.css<br/>   
- ┃ ┃ ┗ 📜style.css<br/>    
- ┃ ┗ 📂js<br/>
- ┃ ┃ ┗ 📜api.js<br/>
- ┃ ┃ ┗ 📜slide.js<br/> 
- ┗ 📜index.html<br/>
+ ┃ ┃ ┣ 📜common.css<br/>
+ ┃ ┃ ┣ 📜layout.css<br/>
+ ┃ ┃ ┣ 📜main.css<br/>
+ ┃ ┃ ┣ 📜slide.css<br/>
+ ┃ ┃ ┗ 📜style.css<br/>
+ ┃ ┣ 📂images<br/>
+ ┃ ┃ ┗ 📜btn-slide.png<br/>
+ ┃ ┣ 📂js<br/>
+ ┃ ┃ ┣ 📜api.js<br/>
+ ┃ ┃ ┗ 📜slide.js<br/>
+ ┃ ┗ 📂scss<br/>
+ ┣ 📜README.md<br/>
+ ┗ 📜index.html
 
 ### :pushpin: 4-2) 사용언어
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=rarrit)](https://github.com/anuraghazra/github-readme-stats)
@@ -90,7 +92,3 @@
 ### 제작 풀이 과정
 - [JavaScript 영화 검색 사이트 제작 및 풀이 과정 1차](https://rarrit.github.io/til/js/movie-correction/)
 - [JavaScript 영화 검색 사이트 제작 및 풀이 과정 2차](https://rarrit.github.io/til/js/movie-correction02/)
-
-
-
-<img src="https://capsule-render.vercel.app/api?type=모양&color=색상코드&height=높이&section=footer&text=텍스트&fontSize=텍스트크기" />
