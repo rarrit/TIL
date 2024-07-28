@@ -35,12 +35,3 @@ console.log(user); // number:  30
 let { name: newName, age: newAge } = user;
 console.log(newName); // 'abc'
 console.log(newAge); // 30
-/*
-let {
-  name: newName,
-  age: newAge,
-} = user = {
-  name : 'abc',
-  age  : 30,
-}
-*/
