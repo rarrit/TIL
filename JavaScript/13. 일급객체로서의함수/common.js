@@ -69,4 +69,4 @@ console.log(multiplyByTwo(10)); // 20
 console.log(multiplyByThree(10)); // 30
 
 const result = add(multiplyByTwo(5), multiplyByThree(10));
-console.log('result =>', ${ result }); // 40
+console.log('result =>', result); // 40
