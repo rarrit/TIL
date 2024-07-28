@@ -24,7 +24,7 @@ console.log(myMap.values()); // {1, 2, 3}
 console.log(myMap.entries()); // {['one',1], ['two', 2], ['three', 3]}
 
 // keys
-for(const key of myMap.keys()){
+for (const key of myMap.keys()) {
   console.log(key);
   // one
   // two
@@ -32,7 +32,7 @@ for(const key of myMap.keys()){
 }
 
 // values
-for(const value of myMap.values()){
+for (const value of myMap.values()) {
   console.log(value);
   // 1
   // 2
@@ -40,11 +40,12 @@ for(const value of myMap.values()){
 }
 
 // entries
-for(const entry of myMap.entries()){
+for (const entry of myMap.entries()) {
   console.log(entry);
   // [one',1]
   // ['two', 2]
   // ['three', 3]
+  // 
 }
 
 console.log(myMap.size); // map의 사이즈 길이 : 3

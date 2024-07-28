@@ -20,11 +20,12 @@ console.log(mySet.has("value2")); // true
 console.log(mySet.has("value4")); // false
 
 // Iterator, 반복했던 그 친구.
-for(const value of mySet.values) {
+for (const value of mySet.values) {
   console.log(value);
   // 'value1'
   // 'value2'
   // 'value3'
   // 'value5'
   // 'value8'
+  // 
 }
