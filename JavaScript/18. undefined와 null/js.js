@@ -5,6 +5,7 @@
 // 값이 있어야하는데, 왜 없지? 자바스크립트: undefined ㅅㄱ
 // undefined 는 '없다'를 명시적으로 표현하지 말자! 개발자들이 헷갈림!! null 쓰자.
 // undefined 예시) 변수의 값이 지정되지 않은 경우
+
 let a;
 console.log(a); // undefined : 데이터 주소에 메모리가 없음
 
