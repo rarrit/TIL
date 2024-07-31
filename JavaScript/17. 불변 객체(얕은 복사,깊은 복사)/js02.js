@@ -28,4 +28,4 @@ if (user !== user2) {
 }
 
 console.log(user.name, user2.name); // wonjang twojang
-console.log(user === user2); // false 👍
+console.log(user === user2); // false 
