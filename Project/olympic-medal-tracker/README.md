@@ -1,5 +1,7 @@
 ## :ledger: React로 올림픽 메달 집계 CRUD를 구현해보자!
 
+![screencapture-localhost-5173-2024-08-13-15_06_50](https://github.com/user-attachments/assets/2e107880-1d10-4041-adea-acd89614a8a7)
+
 ### :one: 과제 개요
 1. 제출 폼 UI 구현하기 
   - 나라 이름과 금, 은, 동 메달 수를 입력할 수 있는 폼을 만듭니다.
