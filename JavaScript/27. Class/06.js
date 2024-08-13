@@ -1,3 +1,6 @@
+// 상속 extends를 사용하여 전기차를 만들어보자!
+// super 공부해야함!
+
 // 새로운 Car class 정의
 class Car {
   constructor(modelName, modelYear, type, price) {
@@ -45,13 +48,25 @@ console.log(car1.getPrice());
 car1.setPrice(6000);
 console.log(car1.getPrice());
 
-// 아래 부분이 상속에 관련된 코드에요!
 class ElectronicCar extends Car {
-  constructor(modelName, modelYear, price) {
+  constructor(modelName, modelYear, price, chargeTime) {
     // Car에 있는 constructor를 통해 자동차를 만들었어요!
     super(modelName, modelYear, "e", price);
+    this.chargeTime = chargeTime;
+  }
+
+  // 전기자동차의 특수 기능 : 충전
+  setChargeTime(time) {
+    this.chargeTime = time;
+  }
+
+  getChargeTime() {
+    return this.chargeTime;
   }
 }
 
-const eleCar1 = new ElectronicCar("뉴아이오닉5", "2023", 7000);
-console.log(eleCar1.getModelName());
+const eleCar1 = new ElectronicCar("뉴아이오닉5", "2023", 7000, 60);
+console.log(eleCar1.getModelName()); // 추가
+console.log(eleCar1.getChargeTime()); // 추가
+eleCar1.setChargeTime(10); // 추가
+console.log(eleCar1.getChargeTime()); // 추가
