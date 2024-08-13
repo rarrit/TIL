@@ -4,6 +4,17 @@ const Table = ({
   List,
   onDelete,
 }) => {
+  // 메달 순위 측정
+  const sortedItems = items.sort((a, b) => {
+    if (b.countryMedalGold !== a.countryMedalGold) {
+      return b.countryMedalGold - a.countryMedalGold;
+    }
+    if (b.countryMedalSilver !== a.countryMedalSilver) {
+      return b.countryMedalSilver - a.countryMedalSilver;
+    }
+    return b.countryMedalBronze - a.countryMedalBronze;
+  });
+
   return (
     <table>
       <thead>
@@ -17,20 +28,13 @@ const Table = ({
       </thead>
       <tbody>
         {
-          // countrys 의 메달 값을 비교한 후 로직 실행
-          items.sort((a, b) => {
-            // 금메달 비교
-            if (b.countryMedalGold !== a.countryMedalGold) {
-              return b.countryMedalGold - a.countryMedalGold;
-            }
-            // 금메달 수가 같다면 은메달 비교
-            if (b.countryMedalSilver !== a.countryMedalSilver) {
-              return b.countryMedalSilver - a.countryMedalSilver;
-            }
-            // 금메달, 은메달 수가 같다면 동메달 비교
-            return b.countryMedalBronze - a.countryMedalBronze;
-          })
-            .map(country => {
+          sortedItems.length === 0 ? (
+            <tr>
+              <td colSpan="5">등록된 메달이 없습니다.</td>
+            </tr>
+          ) : (
+            // countrys 의 메달 값을 비교한 후 로직 실행
+            sortedItems.map(country => {
               return (
                 <List
                   key={country.id}
@@ -39,6 +43,7 @@ const Table = ({
                 />
               )
             })
+          )
         }
       </tbody>
     </table>
