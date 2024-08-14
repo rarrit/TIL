@@ -78,6 +78,10 @@
       - ***국가 삭제***: 국가를 목록에서 삭제합니다.
       - ***국가 초기화***: 입력 필드를 초기화합니다.
 
-
 ### :six: 실행 방법
-- `git clone` 후 터미널에서 `yarn dev`을 입력하면 됩니다.
+1. `git clone`: 폴더 복사
+2. `npm install -g yarn`: yarn 설치
+3. `yarn dev`: 로컬에서 프로젝트 실행
+
+### :seven: 회고
+- [1차 풀이 및 회고](https://rarrit.github.io/react/til/mini/olympic/)
