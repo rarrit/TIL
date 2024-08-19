@@ -1,5 +1,5 @@
 const App = () => {
-  return <h1>Hello, World!</h1>;
+  return <h1>Hello, World Wow!</h1>;
 };
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
