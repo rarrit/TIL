@@ -18,20 +18,6 @@
         <div id="root"></div>
         <!--// root: react 컴포넌트가 렌더링 될 DOM 요소 -->
 
-        <!-- 
-          babel을 적용하려면 type에 babel을 넣어준다. 
-          하지만 console에서 아래와 같은 warning 문구 노출
-          You are using the in-browser Babel transformer. 
-          Be sure to precompile your scripts for production - https://babeljs.io/docs/setup/
-        -->
-        <!-- <script type="text/babel">
-            const App = () => {
-                return <h1>Hello, World!</h1>;
-            };
-            const root = ReactDOM.createRoot(document.getElementById("root"));
-            root.render(<App />);
-        </script> -->
-
-        <script type="text/babel" src="./dist/bundle.js"></script>
+        <!-- Webpack이 자동으로 번들 파일을 삽입합니다 -->
     </body>
 </html>
